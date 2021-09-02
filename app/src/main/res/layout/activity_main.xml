@@ -6,26 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-
-    <LinearLayout
-        android:id="@+id/linearlayout"
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Websites" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Lectures" />
-    </LinearLayout>
+        android:id="@+id/tab_layout"/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager2"/>
 </RelativeLayout>

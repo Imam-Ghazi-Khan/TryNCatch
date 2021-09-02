@@ -1,7 +1,10 @@
 package com.example.tryncatch;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 
 import android.content.Intent;
@@ -17,37 +20,54 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button frag1,frag2;
-    LinearLayout linearLayout;
+    TabLayout tabLayout;
+    ViewPager2 pager2;
+    FragmentAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        frag1 = findViewById(R.id.button3);
-        frag2 = findViewById(R.id.button4);
-        linearLayout = findViewById(R.id.linearlayout);
-        frag1.setOnClickListener(new View.OnClickListener() {
+        tabLayout = findViewById(R.id.tab_layout);
+        pager2 = findViewById(R.id.view_pager2);
+
+        FragmentManager fm = getSupportFragmentManager();
+        adapter = new FragmentAdapter(fm, getLifecycle());
+        pager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Websites"));
+        tabLayout.addTab(tabLayout.newTab().setText("Videos"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onClick(View view) {
-                WebsitesList websitesList = new WebsitesList();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.linearlayout,websitesList);
-                transaction.commit();
+            public void onTabSelected(TabLayout.Tab tab) {
+                pager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
-        frag2.setOnClickListener(new View.OnClickListener() {
+
+
+        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
-            public void onClick(View view) {
-                Videos websitesList = new Videos();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.linearlayout,websitesList);
-                transaction.commit();
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
     }
 }
