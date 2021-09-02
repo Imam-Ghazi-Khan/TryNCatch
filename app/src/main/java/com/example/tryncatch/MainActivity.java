@@ -1,6 +1,7 @@
 package com.example.tryncatch;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,43 +22,32 @@ import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
-    ListView listView;
-    EditText webName,webLink;
-    Button AddWebSites;
-
+    Button frag1,frag2;
+    LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listView = findViewById(R.id.weblist);
-        webName = findViewById(R.id.editText1);
-        webLink = findViewById(R.id.editText2);
-        AddWebSites = findViewById(R.id.button1);
-
-        ArrayList<String> websites = new ArrayList<String>(Arrays.asList("GeeksForGeeks", "LeetCode", "InterviewBit", "CodeForces", "CodeChef","HackerRank","HackerEarth","GitHub","FreeCodeCamp","W3School","CodingBat"));
-        ArrayList<String> weblinks = new ArrayList<String>(Arrays.asList("https://geeksforgeeks.org", "https://leetcode.com", "https://interviewbit.com", "https://codechef.com", "https://codeforces.com","https://hackerrank.com","https://hackerearth.com","https://github.com","https://freecodecamp.org","https://w3schools.com","https://codingbat.com"));
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, websites);
-        listView.setAdapter(adapter);
-        AddWebSites.setOnClickListener(new View.OnClickListener() {
+        frag1 = findViewById(R.id.button3);
+        frag2 = findViewById(R.id.button4);
+        linearLayout = findViewById(R.id.linearlayout);
+        frag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String addWebName = webName.getText().toString();
-                String addWebLink = webLink.getText().toString();
-                websites.add(addWebName);
-                weblinks.add(addWebLink);
-
+                WebsitesList websitesList = new WebsitesList();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.linearlayout,websitesList);
+                transaction.commit();
             }
         });
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        frag2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                String selectedWebsite = adapterView.getItemAtPosition(position).toString();
-                Toast.makeText(MainActivity.this, "Opening "+selectedWebsite, Toast.LENGTH_SHORT).show();
-                Uri link = Uri.parse(weblinks.get(position));
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, link);
-                startActivity(webIntent);
+            public void onClick(View view) {
+                Videos websitesList = new Videos();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.linearlayout,websitesList);
+                transaction.commit();
             }
         });
     }
-    }
+}

@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/activity_list_of_websites.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/fragment_videos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/fragment_websites_list.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
