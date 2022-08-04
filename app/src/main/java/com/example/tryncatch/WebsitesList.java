@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,9 @@ public class WebsitesList extends Fragment {
                 String selectedWebsite = adapterView.getItemAtPosition(position).toString();
                 Toast.makeText(getContext(), "Opening "+selectedWebsite, Toast.LENGTH_SHORT).show();
                 Uri link = Uri.parse(weblinks.get(position));
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, link);
+                //Intent webIntent = new Intent(Intent.ACTION_VIEW, link);
+                Intent webIntent = new Intent(getContext(),ShowWeb.class);
+                webIntent.putExtra("web",weblinks.get(position));
                 startActivity(webIntent);
             }
         });

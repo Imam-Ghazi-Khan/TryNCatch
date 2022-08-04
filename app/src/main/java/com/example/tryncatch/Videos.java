@@ -57,8 +57,10 @@ public class Videos extends Fragment {
                 String selectedWebsite = adapterView.getItemAtPosition(position).toString();
                 Toast.makeText(getContext(), "Opening "+selectedWebsite, Toast.LENGTH_SHORT).show();
                 Uri link = Uri.parse(weblinks.get(position));
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, link);
-                startActivity(webIntent);
+                //Intent webIntent = new Intent(Intent.ACTION_VIEW, link);
+                Intent videoIntent = new Intent(getContext(),ShowWeb.class);
+                videoIntent.putExtra("web",weblinks.get(position));
+                startActivity(videoIntent);
             }
         });
 
