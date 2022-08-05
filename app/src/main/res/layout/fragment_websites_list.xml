@@ -32,8 +32,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Website link"
-            android:text="https://"  />
+            android:hint="Website link"  />
     </LinearLayout>
 
     <Button
