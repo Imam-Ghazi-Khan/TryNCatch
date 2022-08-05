@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Video lecture Name"/>
+            android:hint="Video Name"/>
 
         <EditText
             android:id="@+id/editText2"
