@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Videos">
+
     <LinearLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
@@ -43,10 +44,28 @@
         android:layout_below="@+id/tab"
         android:text="Add" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearlayout"
+        android:text="Press to open,Long press to delete"/>
+
     <ListView
+        android:layout_above="@+id/adView"
         android:id="@+id/weblist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linearlayout" />
+        android:layout_below="@+id/textView" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1740561452279522/4639368720"/>
 
 </RelativeLayout>

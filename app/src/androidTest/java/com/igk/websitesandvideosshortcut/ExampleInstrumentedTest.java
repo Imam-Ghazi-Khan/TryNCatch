@@ -1,4 +1,4 @@
-package com.example.tryncatch;
+package com.igk.websitesandvideosshortcut;
 
 import android.content.Context;
 

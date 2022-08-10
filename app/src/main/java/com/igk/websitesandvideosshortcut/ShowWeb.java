@@ -1,10 +1,9 @@
-package com.example.tryncatch;
+package com.igk.websitesandvideosshortcut;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -25,5 +24,13 @@ public class ShowWeb extends AppCompatActivity {
         WebSettings webSettings = browser.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setPluginState(WebSettings.PluginState.ON);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(browser.canGoBack())
+            browser.goBack();
+        else
+        super.onBackPressed();
     }
 }

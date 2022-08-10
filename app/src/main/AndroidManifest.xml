@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tryncatch">
+    package="com.igk.websitesandvideosshortcut">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ic_baseline_web_24"
+        android:label="Websites &amp; Vidoes Shortcut"
+        android:roundIcon="@drawable/ic_baseline_web_24"
         android:supportsRtl="true"
         android:theme="@style/Theme.TryNCatch">
         <activity
-            android:name=".ShowWeb"
+            android:name="com.igk.websitesandvideosshortcut.ShowWeb"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.igk.websitesandvideosshortcut.MainActivity"
+            android:configChanges="orientation|screenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+                <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+                <meta-data
+                    android:name="com.google.android.gms.ads.APPLICATION_ID"
+                    android:value="ca-app-pub-1740561452279522~7457103754"/>
+
     </application>
 
 </manifest>

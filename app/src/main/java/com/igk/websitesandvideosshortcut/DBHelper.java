@@ -1,4 +1,4 @@
-package com.example.tryncatch;
+package com.igk.websitesandvideosshortcut;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -25,23 +25,24 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+
+
     public boolean InsertData(String webName, String webLink){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, webName);
         contentValues.put(COL_3, webLink);
-        long result = db.insert(TABLE_NAME, null, contentValues);
-        if(result == -1){
-            return false;
-        }else{
-            return  true;
-        }
+        return db.insert(TABLE_NAME, null, contentValues)!=-1;
     }
 
     public Cursor viewData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * from "+TABLE_NAME;
-        Cursor cursor = db.rawQuery(query,null);
-        return cursor;
+        return db.rawQuery("SELECT * from "+TABLE_NAME,null);
     }
+    public void delete(String webName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME, COL_2+"=?", new String[] {String.valueOf(webName)});
+    }
+
+
 }

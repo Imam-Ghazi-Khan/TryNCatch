@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/drawable/ic_baseline_web_24.xml" value="0.138" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/layout/activity_list_of_websites.xml" value="0.1" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/layout/activity_show_web.xml" value="0.1334853090172239" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/layout/activity_web_view.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/layout/fragment_videos.xml" value="0.2586050724637681" />
-        <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/layout/fragment_websites_list.xml" value="0.2" />
+        <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/layout/fragment_websites_list.xml" value="0.264" />
+        <entry key="..\:/Users/igkha/AndroidStudioProjects/Innovison-s-hackathon/app/src/main/res/menu/copydelete.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/activity_list_of_websites.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/igkha/AndroidStudioProjects/TryNCatch/app/src/main/res/layout/fragment_videos.xml" value="0.20416666666666666" />
